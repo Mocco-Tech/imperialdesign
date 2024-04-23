@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Alegreya, Jost } from 'next/font/google';
 import './globals.css';
+import Footer from '@/components/custom/footer/Footer';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: 'Imperial Design',
@@ -28,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${headingsFont.variable} ${bodyFont.variable} font-body text-slate-700`}
       >
+        <Toaster position="top-center" />
         {children}
+        <Footer />
       </body>
     </html>
   );

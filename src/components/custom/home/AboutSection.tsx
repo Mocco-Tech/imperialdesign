@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { urlFor } from '@/lib/sanity';
 import { Button } from '@/components/ui/button';
 import { homeData } from '@/interfaces/homeData';
+import { DialogTrigger } from '@/components/ui/dialog';
 
 function AboutSection({ homeData }: { homeData: homeData }) {
   return (
@@ -26,7 +27,9 @@ function AboutSection({ homeData }: { homeData: homeData }) {
 
       <div className="basis-3/5 flex flex-col h-96 items-start justify-end gap-3">
         <p className="text-slate-600">{homeData.aboutDescription}</p>
-        <Button variant="default">Замовити дизайн</Button>
+        <DialogTrigger asChild>
+          <Button variant="default">Замовити дизайн</Button>
+        </DialogTrigger>
       </div>
     </div>
   );

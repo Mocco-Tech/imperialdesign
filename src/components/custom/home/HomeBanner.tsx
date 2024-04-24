@@ -6,6 +6,7 @@ import { urlFor } from '@/lib/sanity';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { homeData } from '@/interfaces/homeData';
+import { DialogTrigger } from '@/components/ui/dialog';
 
 function HomeBanner({ homeData }: { homeData: homeData }) {
   const bannerImage = urlFor(homeData.heroImage).url();
@@ -45,12 +46,14 @@ function HomeBanner({ homeData }: { homeData: homeData }) {
         transition={{ delay: 0.9, duration: 0.4 }}
         className="z-10 flex gap-5 mt-5"
       >
-        <Button
-          variant="secondary"
-          className="rounded-lg text-base text-teal-950 hover:bg-teal-700 hover:text-teal-50 duration-300"
-        >
-          Замовити дизайн
-        </Button>
+        <DialogTrigger asChild>
+          <Button
+            variant="secondary"
+            className="rounded-lg text-base text-teal-950 hover:bg-teal-700 hover:text-teal-50 duration-300"
+          >
+            Замовити дизайн
+          </Button>
+        </DialogTrigger>
         <Link href="#projects">
           <Button
             variant="secondary"

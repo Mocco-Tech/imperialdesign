@@ -12,10 +12,21 @@ import {
 import { Button } from '@/components/ui/button';
 import { useScrollPosition } from '@/hooks/useScrollPostiion';
 import { motion } from 'framer-motion';
+import MenuIcon from './MenuIcon';
 
-export default function Header() {
+export default function Header({ type = 'default' }: { type?: string }) {
   const scrollPosition = useScrollPosition();
   const isScrolled = scrollPosition > 5;
+
+  const className = () => {
+    return type === 'project'
+      ? 'w-screen max-w-[1600px] 2xl:left-1/2 2xl:-translate-x-1/2 grid grid-cols-2 md:grid-cols-3 px-4 py-2 border-b border-slate-200 items-center sticky top-0 left-0 z-50 bg-white'
+      : `w-screen max-w-[1600px] 2xl:left-1/2 2xl:-translate-x-1/2 grid grid-cols-2 md:grid-cols-3 px-4 py-2 border-b border-slate-200 items-center fixed top-0 left-0 z-50 duration-300 ${
+          isScrolled
+            ? 'text-slate-800 bg-white color'
+            : 'bg-black/15 text-white'
+        }`;
+  };
 
   return (
     <Sheet>
@@ -23,11 +34,7 @@ export default function Header() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 100 }}
         transition={{ duration: 0.5 }}
-        className={`w-screen max-w-[1600px] 2xl:left-1/2 2xl:-translate-x-1/2 grid grid-cols-2 md:grid-cols-3 px-4 py-2 border-b border-slate-200 items-center fixed top-0 left-0 z-50 duration-300 ${
-          isScrolled
-            ? 'text-slate-800 bg-white color'
-            : 'bg-black/15 text-white'
-        }`}
+        className={className()}
       >
         <div className="hidden md:block"></div>
         <div className="md:justify-self-center">
@@ -44,10 +51,7 @@ export default function Header() {
         </div>
         <div className="justify-self-end flex items-center">
           <SheetTrigger>
-            <div className="flex flex-col gap-[6px]">
-              <div className="h-[2px] w-5 rounded bg-slate-100"></div>
-              <div className="h-[2px] w-5 rounded bg-slate-100"></div>
-            </div>
+            <MenuIcon isScrolled={isScrolled} />
           </SheetTrigger>
         </div>
       </motion.header>

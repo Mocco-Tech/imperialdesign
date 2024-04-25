@@ -10,7 +10,7 @@ import { TextArea } from './TextArea';
 import { emailRegex, phoneRegex } from '@/utils/regex';
 
 export default function ContactForm() {
-  const { register, handleSubmit, formState } = useForm();
+  const { register, handleSubmit, formState, reset } = useForm();
   const { isSubmitting, errors } = formState;
 
   const onSubmit = async (data: FieldValues) => {
@@ -20,6 +20,10 @@ export default function ContactForm() {
       loading: 'Надсилаємо...',
       success: 'Ваше повідомлення надіслано!',
       error: 'Нажаль сталась помилка',
+    });
+
+    status.then(() => {
+      reset();
     });
 
     return status;

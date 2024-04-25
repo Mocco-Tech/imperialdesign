@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Link from 'next/link';
-import { HiCheck } from 'react-icons/hi2';
 
 const { PortableText } = require('next-sanity');
 
@@ -45,10 +44,7 @@ const myPortableTextComponents = {
   listItem: {
     bullet: ({ children }: { children: React.ReactNode }) => (
       <li>
-        <span className="flex gap-2 items-center">
-          <HiCheck className="text-indigo-500 font-bold" />
-          {children}
-        </span>
+        <span className="flex gap-2 items-center">{children}</span>
       </li>
     ),
   },

@@ -1,9 +1,9 @@
-import { PiInstagramLogoLight } from 'react-icons/pi';
 import {
-  HiOutlinePhone,
-  HiOutlineEnvelope,
-  HiOutlineCodeBracket,
-} from 'react-icons/hi2';
+  CodeBracketIcon,
+  EnvelopeIcon,
+  PhoneIcon,
+} from '@heroicons/react/24/outline';
+import InstagramIcon from '../header/InstagramIcon';
 
 function FooterBottom() {
   const year = new Date().getFullYear();
@@ -19,23 +19,23 @@ function FooterBottom() {
           target="_blank"
           className="h-9 w-9 bg-teal-900 text-emerald-50 hover:bg-rose-400 duration-200 rounded-full flex items-center justify-center"
         >
-          <PiInstagramLogoLight />
+          <InstagramIcon className="w-5" />
         </a>
         <a
           href="mailto:info@imperialdesign.com.ua"
           className="h-9 w-9 bg-teal-900 text-emerald-50 hover:bg-blue-400 duration-200 rounded-full flex items-center justify-center"
         >
-          <HiOutlineEnvelope />
+          <EnvelopeIcon className="w-5" />
         </a>
         <a
           href=""
           className="h-9 w-9 bg-teal-900 text-emerald-50 hover:bg-emerald-400 duration-200 rounded-full flex items-center justify-center"
         >
-          <HiOutlinePhone />
+          <PhoneIcon className="w-5" />
         </a>
       </div>
       <div className="justify-self-center lg:justify-self-end flex  items-center gap-2">
-        <HiOutlineCodeBracket />
+        <CodeBracketIcon className="w-4" />
         <p>
           Site by{' '}
           <a

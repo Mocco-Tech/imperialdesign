@@ -1,7 +1,7 @@
 import { urlFor } from '@/lib/sanity';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { HiXMark } from 'react-icons/hi2';
+import { XMarkIcon } from '@heroicons/react/24/solid';
 
 export default function ImageLightbox({
   image,
@@ -31,7 +31,7 @@ export default function ImageLightbox({
         className="absolute top-3 right-3"
         onClick={() => setIsOpenLightbox(false)}
       >
-        <HiXMark className="text-2xl text-white" />
+        <XMarkIcon className="w-6 text-white" />
       </button>
     </motion.div>
   );

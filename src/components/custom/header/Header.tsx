@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { useScrollPosition } from '@/hooks/useScrollPostiion';
 import { motion } from 'framer-motion';
 import MenuIcon from './MenuIcon';
+import NavMenu from './NavMenu';
 
 export default function Header({ type = 'default' }: { type?: string }) {
   const scrollPosition = useScrollPosition();
@@ -56,7 +57,7 @@ export default function Header({ type = 'default' }: { type?: string }) {
         </div>
       </motion.header>
       <SheetContent className="flex flex-col justify-between items-start pt-10">
-        <div>menu</div>
+        <NavMenu />
         <SheetClose asChild>
           <Link href="/#call_to_action" className="w-full">
             <Button

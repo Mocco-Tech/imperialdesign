@@ -39,7 +39,7 @@ export async function generateMetadata() {
     openGraph: {
       title: `Дизайн інтер'єру від Imperial Design`,
       description:
-        "Дизайн інтер'єру в Києві та Україні. Дизайн-проекти за доступними цінам від Imperial Design. ",
+        "Дизайн інтер'єру в Києві та Україні. Дизайн-проекти за доступними цінам від Imperial Design.",
       url: `https://www.imperialdesign.com.ua`,
       siteName: 'Imperial Design',
       images: [

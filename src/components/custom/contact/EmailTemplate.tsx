@@ -3,7 +3,7 @@ import React from 'react';
 import { Hr } from '@react-email/hr';
 import { Html } from '@react-email/html';
 import { Text } from '@react-email/text';
-import { FieldValues } from '@/interfaces/fieldValues';
+import { FieldValues } from 'react-hook-form';
 
 export function EmailTemplate({
   email,
@@ -14,7 +14,7 @@ export function EmailTemplate({
   return (
     <Html lang="en">
       <Text>
-        <b>Name:</b> {fullName}
+        <b>Ім&apos;я:</b> {fullName}
       </Text>
       <Hr />
       <Text>
@@ -22,11 +22,11 @@ export function EmailTemplate({
       </Text>
       <Hr />
       <Text>
-        <b>Phone:</b> {phoneNumber}
+        <b>Телефон:</b> {phoneNumber}
       </Text>
       <Hr />
       <Text>
-        <b>Message:</b> {message}
+        <b>Повідомлення:</b> {message}
       </Text>
     </Html>
   );

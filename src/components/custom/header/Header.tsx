@@ -52,7 +52,7 @@ export default function Header({ type = 'default' }: { type?: string }) {
         </div>
         <div className="justify-self-end flex items-center">
           <SheetTrigger>
-            <MenuIcon isScrolled={isScrolled} />
+            <MenuIcon isScrolled={isScrolled} type={type} />
           </SheetTrigger>
         </div>
       </motion.header>

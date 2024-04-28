@@ -15,7 +15,7 @@ function ProjectsBlock({ projects }: { projects: ProjectCardType[] }) {
           className="z-10  mix-blend-difference invert"
         >
           <h1 className="font-heading text-5xl tracking-wider text-black ">
-            Latest Projects
+            Останні проєкти
           </h1>
         </motion.div>
         <div className="bg-black/30 absolute top-0 left-0 w-full h-full"></div>

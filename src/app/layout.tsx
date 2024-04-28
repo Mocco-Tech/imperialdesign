@@ -5,6 +5,7 @@ import Footer from '@/components/custom/footer/Footer';
 import { Toaster } from 'react-hot-toast';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import ContactForm from '@/components/custom/contact/ContactForm';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: 'Imperial Design',
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${headingsFont.variable} ${bodyFont.variable} font-body text-slate-700`}
       >
+        <Analytics />
         <Dialog>
           <Toaster position="top-center" />
           <DialogContent className="max-w-full max-h-full w-[95%] lg:w-4/5 h-4/5 flex items-center justify-center">
